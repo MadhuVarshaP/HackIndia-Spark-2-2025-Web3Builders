@@ -1,0 +1,292 @@
+{
+  "version": "3.4",
+  "log": [
+    {
+      "contracts/Context.sol:Context": {
+        "src": "contracts/Context.sol:16",
+        "inherit": [],
+        "libraries": [],
+        "methods": [],
+        "linkReferences": [],
+        "errors": [],
+        "layout": {
+          "storage": [],
+          "types": {},
+          "layoutVersion": "1.2",
+          "flat": false,
+          "namespaces": {}
+        },
+        "solcVersion": "0.8.20"
+      },
+      "contracts/Ownable.sol:Ownable": {
+        "src": "contracts/Ownable.sol:20",
+        "inherit": [
+          "contracts/Context.sol:Context"
+        ],
+        "libraries": [],
+        "methods": [
+          "owner()",
+          "renounceOwnership()",
+          "transferOwnership(address)"
+        ],
+        "linkReferences": [],
+        "errors": [
+          {
+            "kind": "constructor",
+            "contract": "Ownable",
+            "src": "contracts/Ownable.sol:31"
+          }
+        ],
+        "layout": {
+          "storage": [
+            {
+              "contract": "Ownable",
+              "label": "_owner",
+              "type": "t_address",
+              "src": "contracts/Ownable.sol:21"
+            }
+          ],
+          "types": {
+            "t_address": {
+              "label": "address"
+            }
+          },
+          "layoutVersion": "1.2",
+          "flat": false,
+          "namespaces": {}
+        },
+        "solcVersion": "0.8.20"
+      },
+      "contracts/Vivi.sol:Vivi": {
+        "src": "contracts/Vivi.sol:6",
+        "version": {
+          "withMetadata": "1ac088162626317c6d62d9bca0c063beaa74d8e341a803ec5b041c7f74c5fa84",
+          "withoutMetadata": "1ac088162626317c6d62d9bca0c063beaa74d8e341a803ec5b041c7f74c5fa84",
+          "linkedWithoutMetadata": "1ac088162626317c6d62d9bca0c063beaa74d8e341a803ec5b041c7f74c5fa84"
+        },
+        "inherit": [
+          "contracts/Ownable.sol:Ownable",
+          "contracts/Context.sol:Context"
+        ],
+        "libraries": [],
+        "methods": [
+          "()",
+          "createPost(string,uint8)",
+          "addComment(uint256,string,uint8,bool)",
+          "likePost(uint256)",
+          "dislikePost(uint256)",
+          "likeComment(uint256)",
+          "dislikeComment(uint256)",
+          "addBountyToPost(uint256)",
+          "awardBounty(uint256,address payable)",
+          "cancelPost(uint256)",
+          "editComment(uint256,string)",
+          "deleteComment(uint256)",
+          "recoverEth()",
+          "()"
+        ],
+        "linkReferences": [],
+        "errors": [
+          {
+            "kind": "constructor",
+            "contract": "Vivi",
+            "src": "contracts/Vivi.sol:7"
+          }
+        ],
+        "layout": {
+          "storage": [
+            {
+              "contract": "Vivi",
+              "label": "posts",
+              "type": "t_mapping(t_uint256,t_struct(Post)170_storage)",
+              "src": "contracts/Vivi.sol:35"
+            },
+            {
+              "contract": "Vivi",
+              "label": "comments",
+              "type": "t_mapping(t_uint256,t_struct(Comment)186_storage)",
+              "src": "contracts/Vivi.sol:36"
+            },
+            {
+              "contract": "Vivi",
+              "label": "postComments",
+              "type": "t_mapping(t_uint256,t_array(t_uint256)dyn_storage)",
+              "src": "contracts/Vivi.sol:37"
+            },
+            {
+              "contract": "Vivi",
+              "label": "postLikes",
+              "type": "t_mapping(t_uint256,t_array(t_address)dyn_storage)",
+              "src": "contracts/Vivi.sol:38"
+            },
+            {
+              "contract": "Vivi",
+              "label": "postDislikes",
+              "type": "t_mapping(t_uint256,t_array(t_address)dyn_storage)",
+              "src": "contracts/Vivi.sol:39"
+            },
+            {
+              "contract": "Vivi",
+              "label": "commentLikes",
+              "type": "t_mapping(t_uint256,t_array(t_address)dyn_storage)",
+              "src": "contracts/Vivi.sol:40"
+            },
+            {
+              "contract": "Vivi",
+              "label": "commentDislikes",
+              "type": "t_mapping(t_uint256,t_array(t_address)dyn_storage)",
+              "src": "contracts/Vivi.sol:41"
+            },
+            {
+              "contract": "Vivi",
+              "label": "hasLikedPost",
+              "type": "t_mapping(t_address,t_mapping(t_uint256,t_bool))",
+              "src": "contracts/Vivi.sol:42"
+            },
+            {
+              "contract": "Vivi",
+              "label": "hasDislikedPost",
+              "type": "t_mapping(t_address,t_mapping(t_uint256,t_bool))",
+              "src": "contracts/Vivi.sol:43"
+            },
+            {
+              "contract": "Vivi",
+              "label": "hasLikedComment",
+              "type": "t_mapping(t_address,t_mapping(t_uint256,t_bool))",
+              "src": "contracts/Vivi.sol:44"
+            },
+            {
+              "contract": "Vivi",
+              "label": "hasDislikedComment",
+              "type": "t_mapping(t_address,t_mapping(t_uint256,t_bool))",
+              "src": "contracts/Vivi.sol:45"
+            },
+            {
+              "contract": "Vivi",
+              "label": "postCount",
+              "type": "t_uint256",
+              "src": "contracts/Vivi.sol:47"
+            },
+            {
+              "contract": "Vivi",
+              "label": "commentCount",
+              "type": "t_uint256",
+              "src": "contracts/Vivi.sol:48"
+            }
+          ],
+          "types": {
+            "t_mapping(t_uint256,t_struct(Post)170_storage)": {
+              "label": "mapping(uint256 => struct Vivi.Post)"
+            },
+            "t_uint256": {
+              "label": "uint256"
+            },
+            "t_struct(Post)170_storage": {
+              "label": "struct Vivi.Post",
+              "members": [
+                {
+                  "label": "id",
+                  "type": "t_uint256"
+                },
+                {
+                  "label": "creator",
+                  "type": "t_address"
+                },
+                {
+                  "label": "contentHash",
+                  "type": "t_string_storage"
+                },
+                {
+                  "label": "postType",
+                  "type": "t_enum(PostType)156"
+                },
+                {
+                  "label": "bountyAmount",
+                  "type": "t_uint256"
+                },
+                {
+                  "label": "isActive",
+                  "type": "t_bool"
+                }
+              ]
+            },
+            "t_address": {
+              "label": "address"
+            },
+            "t_string_storage": {
+              "label": "string"
+            },
+            "t_enum(PostType)156": {
+              "label": "enum Vivi.PostType",
+              "members": [
+                "TEXT",
+                "VOICE"
+              ]
+            },
+            "t_bool": {
+              "label": "bool"
+            },
+            "t_mapping(t_uint256,t_struct(Comment)186_storage)": {
+              "label": "mapping(uint256 => struct Vivi.Comment)"
+            },
+            "t_struct(Comment)186_storage": {
+              "label": "struct Vivi.Comment",
+              "members": [
+                {
+                  "label": "id",
+                  "type": "t_uint256"
+                },
+                {
+                  "label": "postId",
+                  "type": "t_uint256"
+                },
+                {
+                  "label": "commenter",
+                  "type": "t_address"
+                },
+                {
+                  "label": "contentHash",
+                  "type": "t_string_storage"
+                },
+                {
+                  "label": "commentType",
+                  "type": "t_enum(PostType)156"
+                },
+                {
+                  "label": "isAnonymous",
+                  "type": "t_bool"
+                },
+                {
+                  "label": "isActive",
+                  "type": "t_bool"
+                }
+              ]
+            },
+            "t_mapping(t_uint256,t_array(t_uint256)dyn_storage)": {
+              "label": "mapping(uint256 => uint256[])"
+            },
+            "t_array(t_uint256)dyn_storage": {
+              "label": "uint256[]"
+            },
+            "t_mapping(t_uint256,t_array(t_address)dyn_storage)": {
+              "label": "mapping(uint256 => address[])"
+            },
+            "t_array(t_address)dyn_storage": {
+              "label": "address[]"
+            },
+            "t_mapping(t_address,t_mapping(t_uint256,t_bool))": {
+              "label": "mapping(address => mapping(uint256 => bool))"
+            },
+            "t_mapping(t_uint256,t_bool)": {
+              "label": "mapping(uint256 => bool)"
+            }
+          },
+          "layoutVersion": "1.2",
+          "flat": false,
+          "namespaces": {}
+        },
+        "solcVersion": "0.8.20"
+      }
+    }
+  ]
+}
